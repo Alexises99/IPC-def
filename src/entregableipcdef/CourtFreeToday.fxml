@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="764.0" prefWidth="799.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="entregableipcdef.CourtFreeTodayController">
+   <children>
+      <TableView fx:id="tableView" layoutX="40.0" layoutY="166.0" prefHeight="580.0" prefWidth="702.0">
+        <columns>
+          <TableColumn fx:id="columnIni" prefWidth="150.0" text="Hora Inicio" />
+          <TableColumn fx:id="columnEnd" minWidth="0.0" prefWidth="154.0" text="Hora Fin" />
+            <TableColumn fx:id="columnCourt" prefWidth="132.0" text="Pista" />
+            <TableColumn fx:id="columnMember" prefWidth="126.0" text="Miembro" />
+            <TableColumn fx:id="columnPaid" prefWidth="139.0" text="Pagada" />
+        </columns>
+      </TableView>
+      <Button fx:id="butToUpdate" layoutX="285.0" layoutY="50.0" mnemonicParsing="false" onAction="#updateTable" prefHeight="79.0" prefWidth="212.0" text="Ver Pistas libres hoy">
+         <font>
+            <Font name="Lucida Sans Demibold" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="butToClose" layoutX="530.0" layoutY="50.0" mnemonicParsing="false" onAction="#closeWindow" prefHeight="79.0" prefWidth="212.0" text="Salir">
+         <font>
+            <Font name="Lucida Sans Demibold" size="16.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="141.0" fitWidth="222.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../padel.jpg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
