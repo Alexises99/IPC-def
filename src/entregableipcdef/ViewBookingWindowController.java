@@ -75,6 +75,7 @@ public class ViewBookingWindowController implements Initializable {
        columnEnd.setCellValueFactory(e -> new SimpleStringProperty(e.getValue().getFromTime().plusMinutes(90).toString()));
        columnPaid.setCellValueFactory(e -> new SimpleStringProperty(e.getValue().getPaid().toString()));
        
+       
         
     }    
     @FXML

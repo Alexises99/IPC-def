@@ -123,7 +123,7 @@ public class BookingWindowController implements Initializable {
         columnDate.setCellValueFactory(e -> new SimpleStringProperty(e.getValue().getBookingDate().format(DateTimeFormatter.ISO_LOCAL_DATE)));
         columnHourStrat.setCellValueFactory(e -> new SimpleStringProperty(e.getValue().getFromTime().toString()));
         columnHourEnd.setCellValueFactory(e -> new SimpleStringProperty(e.getValue().getFromTime().plusMinutes(90).toString()));
-        columnMember.setCellValueFactory(e -> new SimpleStringProperty(e.getValue().getMember().getName()));
+        columnMember.setCellValueFactory(e -> new SimpleStringProperty(e.getValue().getMember().getLogin()));
         
         
     }
@@ -148,6 +148,7 @@ public class BookingWindowController implements Initializable {
         //Miembro falso que indica una pista libre
         Member memberNull = new Member();
         memberNull.setName("Vacia");
+        memberNull.setLogin("Vacia");
         //Comprobacion de que la pista esta libre sin nadie que la emplee
         LocalDate date = datePicker.getValue();
         ArrayList<Booking> listBook = clubDBAccess.getCourtBookings(choiceCourt.getValue().getName(), date);
@@ -193,6 +194,7 @@ public class BookingWindowController implements Initializable {
         //Miembro para comprobar
         Member memberNull = new Member();
         memberNull.setName("Vacia");
+        memberNull.setLogin("Vacia");
         int index = tableView.getSelectionModel().getSelectedIndex();
          
         //Error si no se ha seleccionado nada
